@@ -1,0 +1,13 @@
+{
+  "name": "mp-nutui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "famanoder",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/component-compiler-utils": "^2.3.0",
+    "chalk": "^2.4.1",
+    "fs-extra": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
