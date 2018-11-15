@@ -1,5 +1,5 @@
 <template>
-    <a :class="['nut-cell',{'nut-cell-link':isLink}]" :href="linkUrl||'javascript:;'" :style="{'background-color':bgColor}">
+    <a class="qwe" :class="['nut-cell', as,{'nut-cell-link':isLink}]" :href="linkUrl||'javascript:;'" :style="{'background-color':bgColor}">
         <div class="nut-cell-box">
             <div class="nut-cell-left">
                 <span class="nut-cell-title"><slot name="title">{{title}}</slot></span>
@@ -46,7 +46,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      maps: []
+    };
   },
   methods: {},
   mounted: function() {
