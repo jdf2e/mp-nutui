@@ -1,0 +1,1 @@
+{{"background-color:"+(bgColor? \'red\': \'#ccc\')+";"+"color:"+(1px)}}
