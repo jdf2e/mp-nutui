@@ -1,1 +1,1 @@
-{{"background-color:"+(bgColor? \'red\': \'#ccc\')+";"+"color:"+(1px)}}
+"color:red;color:red;background-color:{{'red'}};color:{{red? 'red': 'blue'}}";

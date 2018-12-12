@@ -1,5 +1,13 @@
 <template>
-    <a class="2" :click-class="qwe" :a="1" @click="1" :class="['nut-cell', as,{'nut-cell-link':isLink}]" :href="linkUrl||'javascript:;'" :style="{'background-color':bgColor? 'red': '#ccc'}">
+    <a 
+      class="2" 
+      style="color:red;color:red;" 
+      :click-class="qwe" 
+      :a="1" 
+      @click="1" 
+      :class="qw()" 
+      :href="linkUrl||'javascript:;'" 
+      :style="{'background-color': 'red', color: red? 'red': 'blue'}">
         <div class="nut-cell-box">
             <div class="nut-cell-left">
                 <span class="nut-cell-title"><slot name="title">{{title}}</slot></span>
