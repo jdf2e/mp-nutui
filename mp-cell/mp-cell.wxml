@@ -1,21 +1,33 @@
-
-<a 
-  class="2" 
-  style="color:red;color:red;" 
-  :click-class="qwe" 
-  :a="1" 
-  @click="1" 
-  :class="qw()" 
-  :href="linkUrl||'javascript:;'" 
-  :style="{'background-color': 'red', color: red? 'red': 'blue'}">
-    <div class="nut-cell-box">
-        <div class="nut-cell-left">
-            <span class="nut-cell-title"><slot name="title">{{title}}</slot></span>
-            <span class="nut-cell-sub-title"><slot name="sub-title">{{subTitle}}</slot></span>
-        </div>
-        <div class="nut-cell-right">
-            <span class="nut-cell-desc"><slot name="desc">{{desc}}</slot></span>
-            <span class="nut-cell-icon"><slot name="icon" v-if="showIcon"><img src="data:image/svg+xml,%3Csvg viewBox='0 0 5 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.215 9.757l3.577-4.17a.931.931 0 0 0 0-1.173L1.215.244a.642.642 0 0 0-1.007 0 .929.929 0 0 0 0 1.172L3.283 5 .208 8.584a.93.93 0 0 0 0 1.173.643.643 0 0 0 1.007 0z' fill='%23c8c8cd'/%3E%3C/svg%3E" alt=""></slot></span>
-        </div>
-    </div>
+<a style="color:red;color:red;background-color:{{'red'}};color:{{red? 'red': 'blue'}}"
+class="2 {{[qw()]}}" click-class="{{qwe}}" a="{{1}}" catch:tap="1" bind:regionchange="regionchange"
+href="{{linkUrl||'javascript:;'}}">
+  <view class="nut-cell-box " wx:for="{{datas}}" wx:key="{{k + v}}" wx:for-index="{{v}}"
+  wx:for-item="{{k}}" wx:if="{{v > 0}}">
+    <view class="nut-cell-left ">
+      <text class="nut-cell-title ">
+        <slot class="" name="title">
+          {{title}}
+        </slot>
+      </text>
+      <text class="nut-cell-sub-title ">
+        <slot class="" name="sub-title">
+          {{subTitle}}
+        </slot>
+      </text>
+    </view>
+    <view class="nut-cell-right ">
+      <text class="nut-cell-desc ">
+        <slot class="" name="desc">
+          {{desc}}
+        </slot>
+      </text>
+      <text class="nut-cell-icon ">
+        <slot class="" name="icon" wx:if="{{showIcon}}">
+          <image class="" src="data:image/svg+xml,%3Csvg viewBox='0 0 5 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.215 9.757l3.577-4.17a.931.931 0 0 0 0-1.173L1.215.244a.642.642 0 0 0-1.007 0 .929.929 0 0 0 0 1.172L3.283 5 .208 8.584a.93.93 0 0 0 0 1.173.643.643 0 0 0 1.007 0z' fill='%23c8c8cd'/%3E%3C/svg%3E"
+          alt="">
+          </image>
+        </slot>
+      </text>
+    </view>
+  </view>
 </a>

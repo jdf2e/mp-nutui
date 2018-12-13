@@ -4,11 +4,13 @@
       style="color:red;color:red;" 
       :click-class="qwe" 
       :a="1" 
-      @click="1" 
+      @click.stop="1" 
+      v-on:regionchange="regionchange"
       :class="qw()" 
       :href="linkUrl||'javascript:;'" 
-      :style="{'background-color': 'red', color: red? 'red': 'blue'}">
-        <div class="nut-cell-box">
+      :style="{'background-color': 'red', color: red? 'red': 'blue'}"
+      >
+        <div class="nut-cell-box" v-for="(k, v) in datas" :key="k + v" v-if="v > 0">
             <div class="nut-cell-left">
                 <span class="nut-cell-title"><slot name="title">{{title}}</slot></span>
                 <span class="nut-cell-sub-title"><slot name="sub-title">{{subTitle}}</slot></span>
@@ -18,6 +20,8 @@
                 <span class="nut-cell-icon"><slot name="icon" v-if="showIcon"><img src="data:image/svg+xml,%3Csvg viewBox='0 0 5 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.215 9.757l3.577-4.17a.931.931 0 0 0 0-1.173L1.215.244a.642.642 0 0 0-1.007 0 .929.929 0 0 0 0 1.172L3.283 5 .208 8.584a.93.93 0 0 0 0 1.173.643.643 0 0 0 1.007 0z' fill='%23c8c8cd'/%3E%3C/svg%3E" alt=""></slot></span>
             </div>
         </div>
+        <div v-else-if="a+b>0">aaaa</div>
+        <div v-else>aaaa</div>
     </a>
 </template>
 <script>

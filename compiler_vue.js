@@ -90,8 +90,7 @@ function createMP(file, dir, source) {
     if(source) {
       const {template, script, styles} = parseVueFile(source, file + VUEFILE);
       if(ext === MPFILES_MAP.get('WXML') && template && template.content) {
-        parseTemplate(template.content);
-        fs.writeFileSync(fullfile, template.content);
+        fs.writeFileSync(fullfile, parseTemplate(template.content));
       }
     }
   }
