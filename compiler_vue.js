@@ -3,11 +3,13 @@ const {extname, join, basename, parse: pathparse} = require('path');
 const compiler = require('vue-template-compiler');
 const { parse } = require('@vue/component-compiler-utils');
 
-const {log, exists, isFile, isDirectory} = require('./utils');
+const {log, exists, isFile, isDirectory} = require('./lib/utils');
 const parseTemplate = require('./lib/parseTemplate');
+const parseVueStyles = require('./lib/parseVueStyles');
 
 const MPPREFIX = 'mp-';
 const VUEFILE = '.vue';
+const STYLEFILES = ['.less', '.scss', '.css'];
 const MPFILES_MAP = new Map([
   ['WXML', '.wxml'], 
   ['WXSS', '.wxss'], 
@@ -41,6 +43,16 @@ function createMPComponent() {
 function convertVues(files = [], dir, _dir) {
   if(files.length) {
     const mainFile = [_dir + VUEFILE, 'index' + VUEFILE];
+    const extraStyleFiles = files.filter(_file => {
+      const file = join(dir, _file);
+      return ~STYLEFILES.indexOf(extname(file)) && isFile(file);
+    }).map(_file => {
+      const file = join(dir, _file);
+      return {
+        ext: extname(file).slice(0, -1),
+        path: join(dir, _file)
+      }
+    });
     const vueFiles = files.filter(_file => {
       const file = join(dir, _file);
       return extname(file) === VUEFILE && isFile(file);
@@ -50,6 +62,7 @@ function convertVues(files = [], dir, _dir) {
       return isDirectory(file);
     });
 
+    console.log(extraStyleFiles)
     if(vueFiles.length) {
       if(mainFile.every(file => {
         return !~vueFiles.indexOf(basename(file));
@@ -60,13 +73,12 @@ function convertVues(files = [], dir, _dir) {
       for(const file of vueFiles) {
         const currDir = MPPREFIX + dir;
         const filename = pathparse(file).name;
-          
-        const source = fs.readFileSync(join(dir, file));
+        const filepath = join(dir, file);
         if(~mainFile.indexOf(file)) {
-          createMP(dir, currDir, source.toString());
+          createMP(dir, currDir, filepath, extraStyleFiles);
         }else{
           
-          createMP(filename, join(currDir, MPPREFIX + filename), source.toString());
+          createMP(filename, join(currDir, MPPREFIX + filename), filepath, extraStyleFiles);
         }
       }
     }
@@ -81,16 +93,19 @@ function convertVues(files = [], dir, _dir) {
   }
 }
 
-function createMP(file, dir, source) {
+function createMP(file, dir, filepath, extraStyleFiles) {
   for(const ext of MPFILES_MAP.values()) {
     const fullfile = join(dir, MPPREFIX + file + ext);
-    
     fs.ensureFileSync(fullfile);
 
-    if(source) {
-      const {template, script, styles} = parseVueFile(source, file + VUEFILE);
+    if(filepath) {
+      const source = fs.readFileSync(filepath);
+      const {template, script, styles} = parseVueFile(source.toString(), file + VUEFILE);
       if(ext === MPFILES_MAP.get('WXML') && template && template.content) {
         fs.writeFileSync(fullfile, parseTemplate(template.content));
+      }console.log(styles)
+      if(ext === MPFILES_MAP.get('WXSS') && styles && styles) {
+        // fs.writeFileSync(fullfile, parseTemplate(template.content));
       }
     }
   }
