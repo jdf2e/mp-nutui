@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const compiler = require('vue-template-compiler');
 const {extname, join, basename, parse: pathparse} = require('path');
-const { parse } = require('@vue/component-compiler-utils');
+const {parse} = require('@vue/component-compiler-utils');
 const {log, exists, isFile, isDirectory} = require('./lib/utils');
 const {compileStyleFile, scss} = require('./lib/parseVueStyles');
 const parseTemplate = require('./lib/parseTemplate');
@@ -39,7 +39,7 @@ function parseVueFile(source, filename) {
 
 function createMPComponent() {
 
-  const hasDir = exists(COMPONENT_ENTRY_DIR);
+  const hasDir = exists(COMPONENT_ENTRY_DIR) && isDirectory(COMPONENT_ENTRY_DIR);
   if(!hasDir) {
     log.error('the entry component directory is not exists !', 'exit');
   }else{
