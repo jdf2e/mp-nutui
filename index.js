@@ -5,6 +5,7 @@ const {parse} = require('@vue/component-compiler-utils');
 const {log, exists, isFile, isDirectory} = require('./lib/utils');
 const {compileStyleFile, scss} = require('./lib/parseVueStyles');
 const parseTemplate = require('./lib/parseTemplate');
+const createWxJson = require('./lib/createWxJson');
 const argv = require('yargs-parser')(process.argv, {
   alias: {
     output: 'o',
@@ -117,7 +118,7 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
       const {template, script, styles} = parseVueFile(source.toString(), filepath + VUEFILE);
       if(ext === MPFILES_MAP.get('WXML') && template && template.content) {
         fs.writeFileSync(fullfile, parseTemplate(template.content));
-        console.log('已生成小程序文件：%s', fullfile);
+        console.log('已生成小程序文件.wxml：%s', fullfile);
       }
       
       let styleStr = '';
@@ -136,9 +137,13 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
       }
       if(ext === MPFILES_MAP.get('WXSS')) {
         fs.writeFileSync(fullfile, styleStr);
-        console.log('已生成小程序文件：%s', fullfile);
+        console.log('已生成小程序文件.wxss：%s', fullfile);
       }
-      
+      if(ext === MPFILES_MAP.get('JSON')) {
+        const json = createWxJson(fileName);
+        fs.writeFileSync(fullfile, JSON.stringify(json));
+        console.log('已生成小程序文件.json：%s', fullfile);
+      }
     }
 
   }
