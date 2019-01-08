@@ -1,0 +1,6 @@
+<view class="nut-badge ">
+  <slot class="">
+  </slot>
+  <sup style="{{stl}}" class="nut-badge__content {{[isDot ? 'is-dot' : '']}}">
+  </sup>
+</view>

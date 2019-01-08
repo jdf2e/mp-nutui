@@ -5,6 +5,7 @@ const {parse} = require('@vue/component-compiler-utils');
 const {log, exists, isFile, isDirectory} = require('./lib/utils');
 const {compileStyleFile, scss} = require('./lib/parseVueStyles');
 const parseTemplate = require('./lib/parseTemplate');
+const traverseScriptAst = require('./lib/traverseScriptAst');
 const createWxJson = require('./lib/createWxJson');
 const argv = require('yargs-parser')(process.argv, {
   alias: {
@@ -12,6 +13,9 @@ const argv = require('yargs-parser')(process.argv, {
     input: 'i'
   }
 });
+
+
+
 const {output, input} = argv;
 
 if(!input) return log.error(`'input' parameter expected!`, 'exit');
@@ -116,6 +120,7 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
     if(filepath) {
       const source = fs.readFileSync(filepath);
       const {template, script, styles} = parseVueFile(source.toString(), filepath + VUEFILE);
+      //console.log("script:",script)
       if(ext === MPFILES_MAP.get('WXML') && template && template.content) {
         fs.writeFileSync(fullfile, parseTemplate(template.content));
         console.log('已生成小程序文件.wxml：%s', fullfile);
@@ -144,6 +149,53 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
         fs.writeFileSync(fullfile, JSON.stringify(json));
         console.log('已生成小程序文件.json：%s', fullfile);
       }
+
+      if(ext === MPFILES_MAP.get('JS') && script && script.content) {
+
+        const testData = `
+        export default {
+          name: "nut-cell",
+          props: {
+            title: {
+              type: String,
+              default: ""
+            },
+            subTitle: {
+              type: String,
+              default: ""
+            },
+            desc: {
+              type: String,
+              default: ""
+            },
+            isLink: {
+              type: Boolean,
+              default: false
+            },
+            linkUrl: {
+              type: String,
+              default: null
+            },
+            showIcon: {
+              type: Boolean,
+              default: false
+            },
+            bgColor: {
+              type: String,
+              default: "#FFFFFF"
+            }
+          },
+          data() {
+            return {};
+          },
+          methods: {}
+        };
+        `
+        console.log("fullfile",fullfile,"script",script.content)
+       fs.writeFileSync(fullfile, traverseScriptAst(script.content));
+        console.log('已生成小程序文件：%s', fullfile);
+      }
+      
     }
 
   }
