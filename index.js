@@ -5,11 +5,8 @@ const {parse} = require('@vue/component-compiler-utils');
 const {log, exists, isFile, isDirectory} = require('./lib/utils');
 const {compileStyleFile, scss} = require('./lib/parseVueStyles');
 const parseTemplate = require('./lib/parseTemplate');
-<<<<<<< HEAD
 const traverseScriptAst = require('./lib/traverseScriptAst');
-=======
 const createWxJson = require('./lib/createWxJson');
->>>>>>> 081103b55405d794b1bdda3c3da6eb46cb5290ca
 const argv = require('yargs-parser')(process.argv, {
   alias: {
     output: 'o',
@@ -152,7 +149,6 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
         fs.writeFileSync(fullfile, JSON.stringify(json));
         console.log('已生成小程序文件.json：%s', fullfile);
       }
-<<<<<<< HEAD
 
       if(ext === MPFILES_MAP.get('JS') && script && script.content) {
 
@@ -200,8 +196,6 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
         console.log('已生成小程序文件：%s', fullfile);
       }
       
-=======
->>>>>>> 081103b55405d794b1bdda3c3da6eb46cb5290ca
     }
 
   }
