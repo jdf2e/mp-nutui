@@ -1,0 +1,12 @@
+<transition class="" name="toastfade">
+  <view style="bottom:{{center?'auto':bottom+'px'}}" class="{{['nut-toast', center ? 'nut-toast-center' : '', type ? 'nut-toast-has-icon' : '', type == 'loading' ? 'nut-loading' : '', customClass, 'nut-toast-' + size]}}" id="{{id}}">
+    <view style="text-align:{{textAlignCenter?'center':'left'}};background-color:{{bgColor}}" class="nut-toast-inner ">
+      <text class="nut-toast-icon-wrapper ">
+        <i style="background-image:{{cusIcon}}" class="{{['nut-toast-icon', type, type === 'loading' && loadingRotate ? 'nut-toast-icon-rotate' : '']}}">
+        </i>
+      </text>
+      <text class="nut-toast-text ">
+      </text>
+    </view>
+  </view>
+</transition>
