@@ -4,6 +4,7 @@ const {extname, join, basename, parse: pathparse} = require('path');
 const {parse} = require('@vue/component-compiler-utils');
 const {log, exists, isFile, isDirectory} = require('./lib/utils');
 const {compileStyleFile, scss} = require('./lib/parseVueStyles');
+const {parseEventHandles} = require('./lib/babel-plugins');
 const parseTemplate = require('./lib/parseTemplate');
 const traverseScriptAst = require('./lib/traverseScriptAst');
 const createWxJson = require('./lib/createWxJson');
@@ -122,7 +123,8 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
       const {template, script, styles} = parseVueFile(source.toString(), filepath + VUEFILE);
       //console.log("script:",script)
       if(ext === MPFILES_MAP.get('WXML') && template && template.content) {
-        fs.writeFileSync(fullfile, parseTemplate(template.content));
+        const {wxmls} = parseTemplate(template.content);
+        fs.writeFileSync(fullfile, wxmls);
         console.log('已生成小程序文件.wxml：%s', fullfile);
       }
       
@@ -151,7 +153,7 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
       }
 
       if(ext === MPFILES_MAP.get('JS') && script && script.content) {
-
+        // templateEvts
         const testData = `
         export default {
           name: "nut-cell",
@@ -192,7 +194,8 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
         };
         `
         console.log("fullfile",fullfile,"script",script.content)
-       fs.writeFileSync(fullfile, traverseScriptAst(script.content));
+        const {events} = parseTemplate(template.content); 
+       fs.writeFileSync(fullfile, traverseScriptAst(parseEventHandles(script.content, events)));
         console.log('已生成小程序文件：%s', fullfile);
       }
       
