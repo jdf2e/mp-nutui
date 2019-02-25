@@ -88,6 +88,7 @@ function convertVues(files = [], dir, compDir, parentDir) {
         if(mainFile === file) {
           console.log('\n组件主文件：', file);
           const stylepath = join(dir, compDir + STYLEFILE);
+
           createMP(null, filename, filepath, parentDir, stylepath);
         }else{
           console.log('\n组件依赖文件：', file);
@@ -138,6 +139,7 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
         }catch(_) {}
       }
       if(stylepath && exists(stylepath)) {
+        console.log('stylepath>>>>>>:',stylepath);
         const stylesFromFile = await compileStyleFile(stylepath, STYLEFILE);
         styleStr += stylesFromFile;
         
@@ -195,6 +197,7 @@ async function createMP(basedir, fileName, filepath, parentDir, stylepath) {
         `
         console.log("fullfile",fullfile,"script",script.content)
         const {events} = parseTemplate(template.content); 
+        console.log('events,', events)
        fs.writeFileSync(fullfile, traverseScriptAst(parseEventHandles(script.content, events)));
         console.log('已生成小程序文件：%s', fullfile);
       }

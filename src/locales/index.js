@@ -4,7 +4,7 @@ import znCH from './lang/zn-CH'
 let defaultMessages = {};
 
 let merged = false;
-let vueI18nHandler = function() {
+const vueI18nHandler = function() {
     const vuei18n = Object.getPrototypeOf(this || Vue).$t;
     if (typeof vuei18n === 'function' && !!Vue.locale) {
         if (!merged) {
@@ -21,7 +21,7 @@ let vueI18nHandler = function() {
 
 function i18n(keysStr, params) {
 
-    let value = vueI18nHandler.apply(this, arguments);
+    const value = vueI18nHandler.apply(this, arguments);
     if (value !== null && value !== undefined) return value;
 
     let message = Object.assign({}, Vue.config.lang === 'zn-CH'? znCH: {}, defaultMessages);

@@ -1,5 +1,4 @@
 module.exports = {
-    scssFolder: 'D:/react/NutUI2/src/styles',
     components: {
         button: {
             "nut-icon": "../icon/icon"
