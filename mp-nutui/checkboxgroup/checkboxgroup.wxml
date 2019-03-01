@@ -1,0 +1,7 @@
+<view class="{{['nut-checkboxgroup', vertical ? 'vertical' : '', customClass]}}">
+  <view class="checkbox-item " wx:for="{{checkBoxData}}" wx:key="{{item[keys.id]}}" wx:for-index="{{index}}" wx:for-item="{{item}}">
+    <nut-checkbox class="" name="{{name||item[keys.name]}}" disabled="{{ disabled || item[keys.disabled]}}" label="{{item[keys.label]}}" animation="{{animation}}" size="{{item.size ? item.size : size}}" id="{{item[keys.id]}}" checked="{{isOptionCheckedByDefault(item)}}" bind:change="changeEvt" data-args0="{{arguments}}" data-args1="{{item}}">
+      {{ item[keys.label] || item[keys.value] || item}}
+    </nut-checkbox>
+  </view>
+</view>

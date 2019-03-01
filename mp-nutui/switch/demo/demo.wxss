@@ -1,0 +1,14 @@
+.my-switch.nut-switch {
+  border-radius: 3px;
+  border-color: #ccc;
+  background-color: #ccc; }
+  .my-switch.nut-switch .nut-switch-btn {
+    border: 2px solid #fff;
+    box-shadow: none;
+    background-color: #fff;
+    border-radius: 3px; }
+  .my-switch.nut-switch.nut-switch-active {
+    border-color: #0092e6;
+    background-color: #0092e6; }
+    .my-switch.nut-switch.nut-switch-active .nut-switch-btn {
+      background-color: #fff; }

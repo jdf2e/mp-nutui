@@ -1,0 +1,131 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <p class="">
+    线形进度条-设置颜色高度
+  </p>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="30" strokeColor="#8e71c7">
+        </nut-progress>
+      </text>
+    </nut-cell>
+  </view>
+  <p class="">
+    线形进度条-百分比不显示
+  </p>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="50" showText="{{false}}" strokeWidth="24">
+        </nut-progress>
+      </text>
+    </nut-cell>
+  </view>
+  <p class="">
+    线形进度条-百分比外显
+  </p>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="30">
+        </nut-progress>
+      </text>
+    </nut-cell>
+  </view>
+  <p class="">
+    线形进度条-百分比内显
+  </p>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="60" textInside="{{true}}">
+        </nut-progress>
+      </text>
+    </nut-cell>
+  </view>
+  <p class="">
+    线形进度条-自定义尺寸(内置"small","base","large"三种规格)
+  </p>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="30" textInside="{{true}}" size="small">
+          <slot class="">
+            <text class="">
+              small
+            </text>
+          </slot>
+        </nut-progress>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="50" textInside="{{true}}" size="base">
+          <slot class="">
+            <text class="">
+              base
+            </text>
+          </slot>
+        </nut-progress>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="70" textInside="{{true}}" size="large">
+          <slot class="">
+            <text class="">
+              large
+            </text>
+          </slot>
+        </nut-progress>
+      </text>
+    </nut-cell>
+  </view>
+  <p class="">
+    线形进度条-状态显示
+  </p>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="30" strokeColor="#f30" status="active">
+        </nut-progress>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="50" strokeColor="#f30" strokeWidth="15" status="wrong">
+        </nut-progress>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" percentage="100" strokeWidth="15" status="success">
+        </nut-progress>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    设置百分比
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-progress class="" size="small" percentage="{{val}}">
+        </nut-progress>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-button class="" type="default" shape="circle" bind:tap="setReduceVal" small="">
+          减少
+        </nut-button>
+        <nut-button class="" type="red" shape="circle" bind:tap="setAddVal" small="">
+          增加
+        </nut-button>
+      </text>
+    </nut-cell>
+  </view>
+</view>

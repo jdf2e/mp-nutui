@@ -1,0 +1,136 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" label="{{1}}">
+          备选项1
+        </nut-radio>
+        <nut-radio class="" label="{{2}}">
+          备选项2
+        </nut-radio>
+      </text>
+      <view class="">
+        radioVal1: {{radioVal1}}
+      </view>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    禁用状态
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" disabled="{{true}}" label="禁用">
+          备选项1
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" disabled="{{true}}" label="选中且禁用">
+          备选项2
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        radioVal2: {{radioVal2}}
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    自定义尺寸
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" size="small">
+          小号
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" size="base">
+          默认
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" size="large">
+          大号
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <p class="">
+      size可选值：'small', 'base', 'large'
+    </p>
+  </view>
+  <h4 class="">
+    禁用动效
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" animation="{{false}}" label="a">
+          备选项1
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" animation="{{false}}" label="b">
+          备选项2
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <p class="">
+      animation属性值为false时，禁用自带动效
+    </p>
+  </view>
+  <h4 class="">
+    事件
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" label="a" bind:change="radioChange">
+          备选项1
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="" label="b" bind:change="radioChange">
+          备选项2
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <p class="">
+      值发生变化时，将触发change事件
+    </p>
+  </view>
+  <h4 class="">
+    自定义Class
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="my-radio " label="a">
+          备选项1
+        </nut-radio>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-radio class="my-radio " label="b">
+          备选项2
+        </nut-radio>
+      </text>
+    </nut-cell>
+  </view>
+</view>

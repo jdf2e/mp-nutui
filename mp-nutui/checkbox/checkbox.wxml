@@ -1,0 +1,7 @@
+<label class="{{['nut-checkbox', 'nut-checkbox-size-' + size]}}">
+  <checkbox class="{{[animation ? 'nut-checkbox-ani' : '']}}" type="checkbox" name="{{name}}" disabled="{{disabled}}" checked.prop="{{isChecked}}" value="{{submittedValue}}" bind:change="changeEvt">
+  </checkbox>
+  <text class="nut-checkbox-label " wx:if="{{label}}">
+    {{label}}
+  </text>
+</label>

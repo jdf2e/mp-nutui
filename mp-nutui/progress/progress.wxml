@@ -1,0 +1,16 @@
+<view class="nut-progress ">
+  <view style="height:{{strokeWidth + 'px'}}" class="nut-progress-outer {{[showText && !textInside ? 'nut-progress-outer-part' : '', 'nut-progress-' + size]}}">
+    <view style="{{bgStyle}}" class="{{['nut-progress-inner', status == 'active' ? 'nut-active' : '']}}">
+      <view style="line-height:{{strokeWidth + 'px'}}" class="nut-progress-text " wx:if="{{showText && textInside}}">
+        {{percentage}}%
+      </view>
+    </view>
+  </view>
+  <view style="line-height:{{strokeWidth + 'px'}}" class="nut-progress-text " wx:if="{{showText && !textInside}}">
+    <slot class="">
+      <template class="" wx:if="{{status=='text' || status=='active'}}">
+        {{percentage}}%
+      </template>
+    </slot>
+  </view>
+</view>

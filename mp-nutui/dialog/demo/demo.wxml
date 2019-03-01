@@ -1,0 +1,93 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <view class="">
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showDialog1">
+      <text class="">
+        <label class="">
+          自定义标题和内容
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showDialog2">
+      <text class="">
+        <label class="">
+          只有标题
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showDialog3">
+      <text class="">
+        <label class="">
+          只有内容
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showDialog4">
+      <text class="">
+        <label class="">
+          移除按钮栏
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showDialog5">
+      <text class="">
+        <label class="">
+          事件
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showDialog6">
+      <text class="">
+        <label class="">
+          无弹出动效
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showDialog7">
+      <text class="">
+        <label class="">
+          遮罩层透明
+        </label>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    图片弹窗
+  </h4>
+  <p class="">
+    type值为“image”时为图片弹窗，需要配置一张图片，可带链接（非必须）。默认展示关闭按钮。点击图片触发onClickImageLink事件，返回false可阻止默认的跳转链接行为。
+  </p>
+  <view class="">
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showImageDialog">
+      <text class="">
+        <label class="">
+          图片弹窗
+        </label>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    共享实例
+  </h4>
+  <p class="">
+    如果给Dialog设置id(推荐)，则该Dialog再次弹出时依旧使用该实例，不再新建实例。如果多个Dialog的id相同，则共享一个实例。
+  </p>
+  <view class="">
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showIdDialog1">
+      <text class="">
+        <label class="">
+          设置id为"myDialog"
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" isLink="{{true}}" showIcon="{{true}}" bind:tap="showIdDialog2">
+      <text class="">
+        <label class="">
+          同样设置id为"myDialog"
+        </label>
+      </text>
+    </nut-cell>
+  </view>
+</view>

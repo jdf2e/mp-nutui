@@ -1,0 +1,20 @@
+<view class="{{['nut-dialog-wrapper', customClass, type === 'image' ? 'nut-dialog-image-wrapper' : '']}}" id="{{id}}">
+  <transition class="" name="{{animation?'nutFade':''}}">
+    <view style="background:{{maskBgStyle}}" class="{{['nut-dialog-mask']}}" bind:tap="modalClick">
+    </view>
+  </transition>
+  <transition class="" name="{{animation?'nutEase':''}}">
+    <view class="nut-dialog-box " bind:tap="modalClick">
+      <view class="nut-dialog " catch:tap="">
+        <a class="nut-dialog-close " href="javascript:;" bind:tap="closeBtnClick" wx:if="{{closeBtn}}">
+        </a>
+        <template class="" wx:if="{{type==='image'}}">
+          <a class="nut-dialog-link " href="javascript:;" bind:tap="imageLinkClick" data-args0="{{a}}" data-args1="{{b}}">
+            <image class="nut-dialog-image " src="{{imgSrc}}" alt="">
+            </image>
+          </a>
+        </template>
+      </view>
+    </view>
+  </transition>
+</view>

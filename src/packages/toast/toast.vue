@@ -23,7 +23,9 @@
 <script>
 export default {
   name: "nut-toast",
-  props: {},
+  props: {
+    a:1
+  },
   data() {
     return {
         id:null,

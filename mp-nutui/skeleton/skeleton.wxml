@@ -1,0 +1,8 @@
+<view class="vue-skeleton-loading ">
+  <view class="skeleton-bac-animation ">
+  </view>
+  <view class="skeleton-bac-content ">
+    <slot class="">
+    </slot>
+  </view>
+</view>

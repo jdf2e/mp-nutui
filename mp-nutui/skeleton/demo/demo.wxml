@@ -1,0 +1,46 @@
+<view class="">
+  <nut-skeleton class="">
+    <row class="" padding="15px 10px 0 ">
+      <skeleton-square class="" width="200px">
+      </skeleton-square>
+      <skeleton-square class="" width="50px" margin="0 0 0 40px">
+      </skeleton-square>
+      <skeleton-square class="" width="50px" margin="0 0 0 10px">
+      </skeleton-square>
+    </row>
+    <row class="" padding="20px 10px">
+      <skeleton-circle class="" diameter="50px">
+      </skeleton-circle>
+      <skeleton-square class="" width="275px" count="{{3}}" margin="5px 10px 5px 10px">
+      </skeleton-square>
+    </row>
+    <row class="" padding="0 10px 20px">
+      <skeleton-circle class="" diameter="50px">
+      </skeleton-circle>
+      <column class="">
+        <skeleton-square class="" width="275px" count="{{2}}" margin="5px 10px 5px 10px">
+        </skeleton-square>
+        <skeleton-square class="" width="100px" margin="5px 10px 5px 10px">
+        </skeleton-square>
+      </column>
+    </row>
+    <row class="" padding="0 10px 20px">
+      <skeleton-square class="" width="75px" height="75px">
+      </skeleton-square>
+      <column class="" padding="0 0 0 10px">
+        <skeleton-square class="" width="275px" height="10px" margin="0 10px 5px 10px">
+        </skeleton-square>
+        <skeleton-square class="" width="100px" height="7.5px" margin="5px 10px 5px 10px">
+        </skeleton-square>
+        <skeleton-square class="" width="275px" backColor="#ffffff" count="{{2}}">
+        </skeleton-square>
+        <skeleton-square class="" width="50px" margin="0 10px 5px 10px">
+        </skeleton-square>
+      </column>
+    </row>
+    <row class="" padding="0 10px 20px">
+      <skeleton-square class="" width="30px" height="30px" margin="15px" wx:for="{{5}}" wx:key="{{i}}" wx:for-index="{{index}}" wx:for-item="{{i}}">
+      </skeleton-square>
+    </row>
+  </nut-skeleton>
+</view>

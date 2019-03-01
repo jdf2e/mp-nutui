@@ -1,0 +1,68 @@
+<view class="demo-list ">
+  <h4 class="">
+    默认用法
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-stepper class="" init="1">
+        </nut-stepper>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    设置最大最小值
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-stepper class="" init="25" min="1" max="100">
+        </nut-stepper>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    设置加减的步长
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-stepper class="" init="10" step="5">
+        </nut-stepper>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    设置只读
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-stepper class="" readonly="">
+        </nut-stepper>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    显示边框
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-stepper class="" simple="{{false}}">
+        </nut-stepper>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    关闭动画过渡
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-stepper class="" transition="{{false}}" simple="{{false}}">
+        </nut-stepper>
+      </text>
+    </nut-cell>
+  </view>
+</view>

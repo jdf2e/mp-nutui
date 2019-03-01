@@ -1,0 +1,93 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="" active.sync="{{swActive}}">
+        </nut-switch>
+      </text>
+      <view class="">
+        {{swActive}}
+      </view>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    自定义尺寸
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="" active="{{true}}" size="small">
+        </nut-switch>
+      </text>
+      <view class="">
+        small
+      </view>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="" active="{{true}}" size="base">
+        </nut-switch>
+      </text>
+      <view class="">
+        base
+      </view>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="" active="{{true}}" size="large">
+        </nut-switch>
+      </text>
+      <view class="">
+        large
+      </view>
+    </nut-cell>
+  </view>
+  <p class="">
+    内置"small","base","large"三种规格
+  </p>
+  <h4 class="">
+    change事件
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="" bind:change="onChange">
+        </nut-switch>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    禁用状态
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="" disabled="{{true}}">
+        </nut-switch>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="" bind:change="onChange" active="{{true}}" disabled="{{true}}">
+        </nut-switch>
+      </text>
+    </nut-cell>
+  </view>
+  <p class="">
+    禁用状态下，change事件参数永远为初始值
+  </p>
+  <h4 class="">
+    自定义Class
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-switch class="my-switch " active="{{true}}">
+        </nut-switch>
+      </text>
+    </nut-cell>
+  </view>
+</view>

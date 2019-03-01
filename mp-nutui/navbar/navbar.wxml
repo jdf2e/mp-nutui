@@ -1,0 +1,31 @@
+<view class="nut-navbar ">
+  <view class="nav-left ">
+    <view class="back " bind:tap="$emit" data-args0="on-click-back">
+      <slot class="" name="back-icon">
+        <i class="back-icon ">
+        </i>
+      </slot>
+    </view>
+    <slot class="" name="left">
+    </slot>
+  </view>
+  <view class="nav-center ">
+    <h3 class="nav-title " bind:tap="$emit" data-args0="on-click-title">
+      <slot class="">
+        <text class="">
+          {{title}}
+        </text>
+      </slot>
+    </h3>
+  </view>
+  <view class="nav-right ">
+    <slot class="" name="right">
+    </slot>
+    <view class="more " bind:tap="$emit" data-args0="on-click-more">
+      <slot class="" name="more-icon">
+        <i class="more-icon ">
+        </i>
+      </slot>
+    </view>
+  </view>
+</view>

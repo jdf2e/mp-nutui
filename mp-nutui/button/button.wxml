@@ -1,0 +1,8 @@
+<button class="{{[btnCls]}}" disabled="{{disabled}}" bind:tap="clickHandler">
+  <nut-icon class="txt-icon " type="{{icon}}" color="{{this.color}}" wx:if="{{icon != ''}}">
+  </nut-icon>
+  <text style="color:{{this.color}}" class="">
+    <slot class="">
+    </slot>
+  </text>
+</button>

@@ -1,0 +1,4 @@
+<view class="nut-switch {{[isActive ? 'nut-switch-active' : '', 'nut-switch-' + size, disabled ? 'nut-switch-disabled' : '']}}" bind:tap="toggle">
+  <view class="nut-switch-btn ">
+  </view>
+</view>

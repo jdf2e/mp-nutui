@@ -1,0 +1,17 @@
+<view class="">
+  <h4 class="">
+    图标文本标签栏
+  </h4>
+  <nut-tabbar class="" bind:tab-switch="tabSwitch1" type="card" tabbarList="{{tabList1}}">
+  </nut-tabbar>
+  <h4 class="">
+    带有tips的文本标签栏
+  </h4>
+  <nut-tabbar class="" bind:tab-switch="tabSwitch2" type="card" tabbarList="{{tabList2}}">
+  </nut-tabbar>
+  <h4 class="">
+    固定底部，可跳转页面
+  </h4>
+  <nut-tabbar class="" bind:tab-switch="tabSwitch3" tabbarList="{{tabList3}}" bottom="{{true}}">
+  </nut-tabbar>
+</view>

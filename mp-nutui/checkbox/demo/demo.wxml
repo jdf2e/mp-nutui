@@ -1,0 +1,147 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" bind:change="changeBox1">
+          选项
+        </nut-checkbox>
+      </text>
+      <text class="">
+        复选按钮checked：{{checkbox1}}
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    禁用状态
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" disabled="">
+          未选时禁用状态
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" disabled="">
+          已选时禁用状态
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    自定义尺寸
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" size="small">
+          小号1
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" size="base">
+          默认
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" size="large">
+          大号
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+    <p class="">
+      size可选值：'small', 'base', 'large'
+    </p>
+  </view>
+  <h4 class="">
+    禁用动效
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" animation="{{false}}">
+          没有动效
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" animation="{{false}}">
+          没有动效
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+    <p class="">
+      animation属性值为false时，禁用自带动效
+    </p>
+  </view>
+  <h4 class="">
+    事件
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" label="{{'change事件'}}" bind:change="checkboxChange">
+          备选项
+        </nut-checkbox>
+      </text>
+      <text class="">
+        {{result}}
+      </text>
+    </nut-cell>
+    <p class="">
+      值发生变化时，将触发change事件
+    </p>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" label="{{'选项值1'}}" bind:change="getChange">
+          change事件
+        </nut-checkbox>
+      </text>
+      <text class="">
+        {{result2}}
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="" label="{{'选项值2'}}" bind:change="getChange2">
+          change事件
+        </nut-checkbox>
+      </text>
+      <text class="">
+        {{result3}}
+      </text>
+    </nut-cell>
+    <p class="">
+      设置label时，可获取选项label值
+    </p>
+  </view>
+  <h4 class="">
+    自定义Class
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="my-checkbox ">
+          自定义Class:"my-checkbox"
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkbox class="my-checkbox ">
+          自定义Class:"my-checkbox"
+        </nut-checkbox>
+      </text>
+    </nut-cell>
+  </view>
+</view>

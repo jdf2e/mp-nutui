@@ -1,0 +1,35 @@
+<view class="nut-actionsheet ">
+  <transition class="" name="{{isAnimation?'nutFade':''}}">
+    <view class="nut-actionsheet-mask " bind:tap="clickActionSheetMask">
+    </view>
+  </transition>
+  <transition class="" name="{{isAnimation?'nutSlideUp':''}}">
+    <view class="nut-actionsheet-panel ">
+      <view class="nut-actionsheet-custom " wx:if="{{$slots.custom}}">
+        <slot class="" name="custom">
+          {{custom}}
+        </slot>
+      </view>
+      <dl class="nut-actionsheet-modal " wx:if="{{$slots.title || $slots.subTitle }}">
+        <dt class="nut-actionsheet-title ">
+          <slot class="" name="title">
+            {{title}}
+          </slot>
+        </dt>
+        <dd class="nut-actionsheet-sub-title ">
+          <slot class="" name="sub-title">
+            {{subTitle}}
+          </slot>
+        </dd>
+      </dl>
+      <ul class="nut-actionsheet-menu ">
+        <li class="nut-actionsheet-item {{[isHighlight(item) ? 'nut-actionsheet-item-active' : '']}}" bind:tap="chooseItem" data-args0="{{item}}" wx:for="{{menuItems}}" wx:key="{{index}}" wx:for-index="{{index}}" wx:for-item="{{item}}">
+          {{item[optionTag]}}
+        </li>
+      </ul>
+      <view class="nut-actionsheet-cancel " bind:tap="closeActionSheet" wx:if="{{cancelTxt}}">
+        {{cancelTxt}}
+      </view>
+    </view>
+  </transition>
+</view>

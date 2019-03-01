@@ -1,0 +1,118 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" checkBoxData="{{data1}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+    <p class="">
+      {{group1}}
+    </p>
+  </view>
+  <h4 class="">
+    禁用状态
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" checkBoxData="{{data2}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    自定义尺寸
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" size="{{'small'}}" checkBoxData="{{data3}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" size="{{'base'}}" checkBoxData="{{data3}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" checkBoxData="{{data33}}" size="{{'small'}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+    <p class="">
+      size可选值：'small', 'base', 'large'
+    </p>
+    <p class="">
+      data设置size属性高于标签size
+    </p>
+  </view>
+  <h4 class="">
+    禁用动效
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" checkBoxData="{{['选项1','选项2']}}" animation="{{false}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+    <p class="">
+      选择状态：{{group6}}
+    </p>
+    <p class="">
+      animation属性值为false时，禁用自带动效
+    </p>
+  </view>
+  <h4 class="">
+    横向排列
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" checkBoxData="{{data5}}" vertical="{{true}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+    <p class="">
+      avertical属性值为true时，横向排列
+    </p>
+    <p class="">
+      状态：label值与选中value值不同时，{{group7}}
+    </p>
+  </view>
+  <h4 class="">
+    事件
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" checkBoxData="{{data6}}" bind:change="changeEvt">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+    <p class="">
+      选择状态：{{group0}}
+    </p>
+    <p class="">
+      值发生变化时，将触发change事件
+    </p>
+  </view>
+  <h4 class="">
+    自定义样式
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <nut-checkboxgroup class="" customClass="{{'my-checkbox'}}" checkBoxData="{{data7}}">
+        </nut-checkboxgroup>
+      </text>
+    </nut-cell>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="s-bar demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <view class="demo1 ">
+    <nut-searchbar class="">
+    </nut-searchbar>
+  </view>
+  <p class="">
+    右侧搜索按钮可根据需要进行配置
+  </p>
+  <view class="demo1 ">
+    <nut-searchbar class="" placeText="请输入自定义文案" hasSearchButton="{{false}}">
+    </nut-searchbar>
+  </view>
+  <p class="">
+    可配置输入框前面是否显示搜索图标、右侧是否显示文字按钮、显示文字、自定义 class
+  </p>
+  <view class="demo1 ">
+    <nut-searchbar class="" placeText="ERP/姓名/邮箱" hasIcon="{{true}}" hasTextButton="{{true}}" customClass="search_demo">
+    </nut-searchbar>
+  </view>
+  <h4 class="">
+    事件
+  </h4>
+  <view class="demo1 ">
+    <nut-searchbar class="" placeText="请输入自定义文案" bind:focus="focusFun" bind:input="inputFun" bind:blur="blurFun" bind:submit="submitFun">
+    </nut-searchbar>
+  </view>
+</view>

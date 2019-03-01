@@ -1,0 +1,125 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法
+  </h4>
+  <view class="">
+    <nut-cell class="" showIcon="{{true}}" bind:tap="textToast1" data-args0="我只传了文案一个参数">
+      <text class="">
+        <label class="">
+          只传文案
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="textToast2" data-args0="我传了文案和显示时长两个参数，多行文字默认居中展示" data-args1="{{5000}}">
+      <text class="">
+        <label class="">
+          设置显示时长
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="sucToast" data-args0="操作成功">
+      <text class="">
+        <label class="">
+          Success
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="failToast" data-args0="操作失败">
+      <text class="">
+        <label class="">
+          Fail
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="warnToast" data-args0="操作警告">
+      <text class="">
+        <label class="">
+          Warn
+        </label>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    加载提示
+  </h4>
+  <view class="">
+    <nut-cell class="" showIcon="{{true}}" bind:tap="showLoading">
+      <text class="">
+        <label class="">
+          Loading
+        </label>
+      </text>
+      <text class="">
+        默认不自动消失
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="hideLoading">
+      <text class="">
+        <label class="">
+          隐藏Loading
+        </label>
+      </text>
+      <text class="">
+        点击手动隐藏上面的Loading
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="showLoading2">
+      <text class="">
+        <label class="">
+          Loading
+        </label>
+      </text>
+      <text class="">
+        带文案+自动消失
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    自定义样式
+  </h4>
+  <view class="">
+    <nut-cell class="" showIcon="{{true}}" bind:tap="cusBgToast" data-args0="我修改了背景色和透明度">
+      <text class="">
+        <label class="">
+          自定义背景色和透明度
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="cusClassToast" data-args0="我增加了一个名为 my-class 自定义class">
+      <text class="">
+        <label class="">
+          自定义class
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="cusIconToast" data-args0="自定义Icon">
+      <text class="">
+        <label class="">
+          自定义Icon
+        </label>
+      </text>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    共享实例
+  </h4>
+  <p class="">
+    id相同时，将共享一个实例，新的内容和设置将取代旧的，二者不能同时出现。loading类型默认拥有相同id，即共享一个实例，其他类型默认不共享。
+  </p>
+  <view class="">
+    <nut-cell class="" showIcon="{{true}}" bind:tap="idToast1" data-args0="我设置了id为123">
+      <text class="">
+        <label class="">
+          我设置了id为123
+        </label>
+      </text>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}" bind:tap="idToast2" data-args0="我也设置了id，值也是123">
+      <text class="">
+        <label class="">
+          我也设置了id，值也是123
+        </label>
+      </text>
+    </nut-cell>
+  </view>
+</view>

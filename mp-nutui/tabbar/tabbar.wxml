@@ -1,0 +1,18 @@
+<view class="nut-tabbar {{[bottom ? 'bottom' : '']}}">
+  <a class="tabbar-nav {{[value.curr ? 'curr' : '', type == 'card' ? 'bor-right' : null]}}" bind:tap="switchTabs" data-args0="{{value}}" data-args1="{{index}}" href="{{value.href}}" wx:for="{{tabList}}" wx:key="{{value.tabTitle}}" wx:for-index="{{index}}" wx:for-item="{{item}}">
+    <text class="icon-box ">
+      <b class="tips " wx:if="{{value.num}}">
+        {{value.num}}
+      </b>
+      <template class="" wx:if="{{value.icon}}">
+        <view style="background-image:{{'url('+value.activeIcon+')'}}" class="icon " wx:if="{{value.curr}}">
+        </view>
+        <view style="background-image:{{'url('+value.icon+')'}}" class="icon " wx:if="{{!value.curr}}">
+        </view>
+      </template>
+      <text class="{{['tabbar-nav-word', !value.icon ? 'big-word' : '']}}">
+        {{value.tabTitle}}
+      </text>
+    </text>
+  </a>
+</view>

@@ -1,0 +1,8 @@
+<label class="{{['nut-radio', 'nut-radio-size-' + size]}}">
+  <radio class="{{[animation ? 'nut-radio-ani' : '']}}" type="radio" checked="{{value===label}}" disabled="{{disabled}}" label="{{label}}" value="{{value}}" bind:change="changeEvt">
+  </radio>
+  <text class="nut-radio-label ">
+    <slot class="">
+    </slot>
+  </text>
+</label>

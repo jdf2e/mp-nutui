@@ -1,0 +1,10 @@
+<view class="nut-swiper {{[direction, dragging ? 'dragging' : '']}}" bind:touchstart="_onTouchStart" bind:mousedown="_onTouchStart">
+  <view style="transform:{{'translate3d('+translateX+'px,'+translateY+'px,0)'}};transition-duration:{{transitionDuration+'ms'}};webkit-transform:{{'translate3d('+translateX+'px,'+translateY+'px,0)'}};webkit-transition-duration:{{transitionDuration+'ms'}};transition-timing-function:{{'ease'}}" class="nut-swiper-wrap " bind:transitionend="_onTransitionEnd">
+    <slot class="">
+    </slot>
+  </view>
+  <view class="nut-swiper-pagination ">
+    <text class="swiper-pagination-bullet {{[index + 1 === currentPage ? 'active' : '']}}" bind:tap="setPage" data-args0="{{undefined}}" data-args1="{{true}}" wx:for="{{slideEls}}" wx:key="{{index}}" wx:for-index="{{index}}" wx:for-item="{{item}}">
+    </text>
+  </view>
+</view>

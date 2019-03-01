@@ -1,0 +1,3 @@
+Compontents({
+  data: {}
+});

@@ -1,0 +1,114 @@
+<view class="demo-list ">
+  <h4 class="">
+    基本用法(选择类)
+  </h4>
+  <view class="">
+    <nut-cell class="" showIcon="{{true}}">
+      <text class="">
+        <label class="">
+          性别
+        </label>
+      </text>
+      <view class="selected-option " bind:tap="switchActionSheet" data-args0="isVisible">
+        {{sex}}
+      </view>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}">
+      <text class="">
+        <label class="">
+          年龄
+        </label>
+      </text>
+      <text class="">
+        带取消按钮~~~~
+      </text>
+      <view class="selected-option " bind:tap="switchActionSheet" data-args0="isVisible1">
+        {{agespec}}
+      </view>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}">
+      <text class="">
+        <label class="">
+          年龄
+        </label>
+      </text>
+      <text class="">
+        高亮选中项~~~~
+      </text>
+      <view class="selected-option " bind:tap="switchActionSheet" data-args0="isVisible2">
+        {{age}}
+      </view>
+    </nut-cell>
+    <nut-cell class="" showIcon="{{true}}">
+      <text class="">
+        <label class="">
+          星座
+        </label>
+      </text>
+      <text class="">
+        设置列表项展示使用参数~~~~
+      </text>
+      <view class="selected-option " bind:tap="switchActionSheet" data-args0="isVisible3">
+        {{constellation}}
+      </view>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    提示类
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <label class="">
+          我就列表测试数据
+        </label>
+      </text>
+      <text class="">
+        我是描述~~~~
+      </text>
+      <view class="selected-option " bind:tap="switchActionSheet" data-args0="isVisible4">
+        删除本条
+      </view>
+    </nut-cell>
+  </view>
+  <h4 class="">
+    自定义类
+  </h4>
+  <view class="">
+    <nut-cell class="">
+      <text class="">
+        <label class="">
+          内容自定义
+        </label>
+      </text>
+      <view class="selected-option " bind:tap="switchActionSheet" data-args0="isVisible5">
+        打开
+      </view>
+    </nut-cell>
+  </view>
+  <nut-actionsheet class="" is-visible="{{isVisible}}" bind:close="switchActionSheet" data-args0="isVisible" menu-items="{{menuItems}}" bind:choose="chooseItem">
+  </nut-actionsheet>
+  <nut-actionsheet class="" is-visible="{{isVisible1}}" bind:close="switchActionSheet" data-args0="isVisible1" cancelTxt="{{`取消`}}" menu-items="{{menuItems2}}" bind:choose="chooseItemAgeSpec">
+  </nut-actionsheet>
+  <nut-actionsheet class="" is-visible="{{isVisible2}}" menu-items="{{menuItems2}}" chooseTagValue="{{age}}" bind:close="switchActionSheet" data-args0="isVisible2" bind:choose="chooseItemAge">
+  </nut-actionsheet>
+  <nut-actionsheet class="" is-visible="{{isVisible3}}" menu-items="{{menuItems3}}" optionTag="{{`title`}}" bind:close="switchActionSheet" data-args0="isVisible3" bind:choose="chooseItemConstellation">
+  </nut-actionsheet>
+  <nut-actionsheet class="" is-visible="{{isVisible4}}" menu-items="{{menuItems4}}" chooseTagValue="{{`确定`}}" cancelTxt="{{`取消`}}" bind:close="switchActionSheet" data-args0="isVisible4">
+    <text class="">
+      <label class="">
+        确定删除吗？
+      </label>
+    </text>
+    <text class="">
+      删除之后不能，描述信息，删除之后不能，描述信息
+    </text>
+  </nut-actionsheet>
+  <nut-actionsheet class="" is-visible="{{isVisible5}}" bind:close="switchActionSheet" data-args0="isVisible5">
+    <view class="custom-wrap ">
+      <text class="">
+        自定义
+      </text>
+    </view>
+  </nut-actionsheet>
+</view>

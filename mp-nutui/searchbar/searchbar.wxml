@@ -1,0 +1,19 @@
+<view class="{{['nut-searchbar', customClass ? customClass : '']}}">
+  <view class="search-input {{[animation ? 'nut-search-ani' : '', inputFocusAnimation ? 'focus' : '']}}">
+    <form class="" action="" id="input-form" bind:submit="submitFun">
+      <nut-icon class="" type="search" width="20" height="20" wx:if="{{hasIcon}}">
+      </nut-icon>
+      <input class="" type="text" placeholder="{{placeText || nutTranslate('lang.searchbar.placeText')}}" bind:focus="focusFun" bind:input="inputFun" bind:blur="blurFun">
+      </input>
+      <text class="close-icon {{[hasCloseIcon ? 'show' : '']}}" bind:tap="clearInput">
+        <nut-icon class="" type="circle-cross" width="15" height="15">
+        </nut-icon>
+      </text>
+    </form>
+  </view>
+  <a class="btn-search " href="javascript:;" wx:if="{{hasSearchButton}}">
+    <text class="" wx:if="{{hasTextButton}}">
+      {{textInfo || nutTranslate('lang.searchbar.textInfo')}}
+    </text>
+  </a>
+</view>

@@ -1,0 +1,120 @@
+<view class="">
+  <h4 class="">
+    常规按钮
+  </h4>
+  <view class="bg ">
+    <nut-button class="" bind:tap="clickHandler">
+      去结算
+    </nut-button>
+    <nut-button class="" disabled="">
+      去结算（disabled）
+    </nut-button>
+    <view class="gap ">
+    </view>
+    <nut-button class="" small="">
+      去结算
+    </nut-button>
+    <nut-button class="" small="" disabled="">
+      去结算（disabled）
+    </nut-button>
+  </view>
+  <h4 class="">
+    常规按钮组
+  </h4>
+  <nut-button-group class="">
+    <nut-button class="" type="light">
+      重置
+    </nut-button>
+    <nut-button class="">
+      确定
+    </nut-button>
+  </nut-button-group>
+  <h4 class="">
+    通栏按钮
+  </h4>
+  <view class="">
+    <nut-button class="" block="">
+      登录
+    </nut-button>
+    <view class="gap ">
+    </view>
+    <nut-button class="" block="" shape="circle">
+      登录
+    </nut-button>
+  </view>
+  <h4 class="">
+    圆角按钮-常规Button
+  </h4>
+  <view class="white-bg ">
+    <nut-button class="" type="red" shape="circle" small="">
+      确认收货
+    </nut-button>
+    <nut-button class="" type="gray" shape="circle" small="">
+      查看物流
+    </nut-button>
+    <nut-button class="" type="default" shape="circle" small="">
+      再次购买
+    </nut-button>
+    <nut-button class="" type="light" shape="circle" small="">
+      降价通知
+    </nut-button>
+  </view>
+  <h4 class="">
+    圆角按钮-标签Button
+  </h4>
+  <view class="white-bg ">
+    <nut-button class="" type="primary" shape="circle" small="">
+      京东快递
+    </nut-button>
+    <nut-button class="" type="lightred" shape="circle" small="">
+      好评 6.6万
+    </nut-button>
+    <nut-button class="" type="actived" shape="circle" icon="tick" small="">
+      全部 100万
+    </nut-button>
+  </view>
+  <h4 class="">
+    图标按钮-小
+  </h4>
+  <view class="white-bg ">
+    <nut-button class="" type="actived" shape="circle" icon="tick" small="">
+    </nut-button>
+  </view>
+  <h4 class="">
+    图标按钮-大
+  </h4>
+  <view class="white-bg ">
+    <nut-button class="" type="actived" shape="circle" icon="tick">
+    </nut-button>
+  </view>
+  <h4 class="">
+    圆角按钮-商品属性选择Button
+  </h4>
+  <view class="white-bg ">
+    <nut-button class="" type="actived" shape="circle" small="">
+      象牙白
+    </nut-button>
+    <nut-button class="" type="light" shape="circle" small="">
+      皓月灰
+    </nut-button>
+    <nut-button class="" type="dashed" shape="circle" small="">
+      晶钻蓝
+    </nut-button>
+  </view>
+  <h4 class="">
+    自定义颜色
+  </h4>
+  <view class="white-bg ">
+    <nut-button class="" type="actived" shape="circle" small="" color="#fff">
+      象牙白
+    </nut-button>
+    <nut-button class="" type="primary" shape="circle" small="" color="rgb(0,0,0)">
+      象牙白
+    </nut-button>
+    <nut-button class="" type="actived" shape="circle" icon="tick" color="rgb(0,0,0)" small="">
+    </nut-button>
+    <nut-button class="" type="actived" shape="circle" icon="tick" color="rgb(0,0,0)" small="">
+      全部 100万
+    </nut-button>
+  </view>
+</view>
